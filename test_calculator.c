@@ -54,6 +54,20 @@ void test_sub_negative_numbers(void) {
     
 }
 
+// multiply
+
+void test_multiply_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(6, multiply(2, 3)); // TEST_ASSERT_EQUAL(expected, actual)
+}
+
+void test_multiply_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-20, multiply(5, -4)); //expect 5 * -4 = -20
+}
+void test_multiply_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(12, multiply(-3, -4)); //expect -3 * -4 = 12
+    
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_add_positive_numbers);
@@ -66,6 +80,10 @@ int main(void) {
     RUN_TEST(test_sub_positive_numbers);
     RUN_TEST(test_sub_positive_and_negative_numbers);
     RUN_TEST(test_sub_negative_numbers);
+
+    RUN_TEST(test_multiply_positive_numbers);
+    RUN_TEST(test_multiply_positive_and_negative_numbers);
+    RUN_TEST(test_multiply_negative_numbers);
 
     return UNITY_END();
 }
