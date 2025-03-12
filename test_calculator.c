@@ -68,6 +68,20 @@ void test_multiply_negative_numbers(void) {
     
 }
 
+// divide
+
+void test_divide_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(0, divide(2, 3)); // TEST_ASSERT_EQUAL(expected, actual)
+}
+
+void test_divide_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-12, divide(50, -4)); //expect 50 * -4 = -12
+}
+void test_divide_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(7, divide(-30, -4)); //expect -30 / -4 = 7
+    
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_add_positive_numbers);
@@ -85,5 +99,8 @@ int main(void) {
     RUN_TEST(test_multiply_positive_and_negative_numbers);
     RUN_TEST(test_multiply_negative_numbers);
 
+    RUN_TEST(test_divide_positive_numbers);
+    RUN_TEST(test_divide_positive_and_negative_numbers);
+    RUN_TEST(test_divide_negative_numbers);
     return UNITY_END();
 }
